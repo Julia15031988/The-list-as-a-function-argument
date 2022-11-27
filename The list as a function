@@ -1,0 +1,81 @@
+#1
+
+
+#the list as a function argument
+def show_me (args=[]):
+    i=0
+    print ("Arguments and functions")
+    for s in args:
+        i+=1
+        print (str(i)+ "-argument" , s)
+    print("Calculation of the function is finished")
+show_me()
+show_me([1000])
+nums=[10,55,2+3j,0.123]
+show_me(nums)
+show_me(["Python", "Java"])
+
+
+
+
+#2
+
+
+#A function with a variable number of arguments
+# The only formal argument is handled
+# as a list
+def show_me(*args):
+    i=0
+    print("Arguments of the Function:")
+    for s in args:
+        i+=1
+        print (str(i)+ " argument ", s)
+        print("Execution of the function is complete")
+show_me()
+show_me(100)
+nums=[10,55,2+3j,0.123]
+show_me(*nums)
+show_me("Python", "Java")
+
+
+#3
+
+#Required and optional arguments
+#A function with at least two arguments
+def show_me(first, second, *other):
+    #first argument
+    print ("First argument", first)
+    #second argument
+    print("Second argument", second)
+    #the number of optional arguments
+    n=len(other)
+    print ("There are", n, "arguments")
+    #the tuple of optional arguments
+    print (other)
+show_me(10,20,30,40,50,60)
+
+
+
+#4
+
+#arguments by the keys
+#function with free numbers of arguments
+def show_me(first, second, *other, **byname):
+    #reflecting the values of arguments
+    print ("First -> ", first)
+    print("Second -> ", second)
+    print("Other -> ", other)
+    print("Byname -> ", byname)
+#Examples
+print ("The 1 st method of calling the function")
+show_me(10,20,30,40,50,60,70)
+print ("The 2 nd method of calling the function")
+show_me(10,20,30,40,50,60,70, third =30, fourth =40)
+print ("The 3 rd method of calling the function")
+show_me(10,20, third =30, fourth =40)
+print ("The 4th method of calling the function")
+show_me(second=20, first = 10)
+print ("The 5th method of calling the function")
+show_me(first=10,second=20,third=30,fourth=40)
+
+
